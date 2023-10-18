@@ -89,6 +89,7 @@ jobs:
     - name: Download package
       working-directory: ./openwrt
       run: |
+        export FORCE_UNSAFE_CONFIGURE=1
         make download -j5
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
